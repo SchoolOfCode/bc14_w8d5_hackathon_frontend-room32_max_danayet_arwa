@@ -81,3 +81,11 @@
 .cart-info {
   font-size: 18px;
 }
+
+.product-desc {
+  display: none;
+}
+
+.product-item:hover .product-desc {
+  display: flex;
+}

@@ -30,11 +30,12 @@ const ProductInfo = () => {
   {filteredProducts.map(product => (
     <div key={product.id} className="product-item">
       <h2>{product.title}</h2>
-      <p>{product.description}</p>
+
       <p>£{product.price}</p>
       <div className="product-image-wrapper">
         <img className="product-image" src={product.image} alt={product.title} />
       </div>
+      <p className="product-desc">{product.description}</p>
       <Button className="add-to-cart-button" title="Add To Cart" product={product} setCart={setCart}/>
     </div>
   ))}

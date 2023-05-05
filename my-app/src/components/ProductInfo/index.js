@@ -28,11 +28,11 @@ const ProductInfo = () => {
       <SearchBar setSearchText={setSearchText} searchText={searchText}/>
       <div className="product-grid">
         {filteredProducts.map(product => (
-          <div key={product.id}>
+          <div key={product.id} className="product-item">
             <h2>{product.title}</h2>
             <p>{product.description}</p>
             <p>£{product.price}</p>
-            <img src={product.image} alt={product.title} />
+            <img src={product.image} alt={product.title} className="product-image" />
             <Button title="Add To Cart" product={product} setCart={setCart}/>
           </div>
         ))}

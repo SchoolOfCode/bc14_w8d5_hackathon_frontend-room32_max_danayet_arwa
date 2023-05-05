@@ -1,17 +1,23 @@
 import { useState, useEffect } from 'react';
 import Button from "../AddToCart"
+import React from 'react';
+import SearchBar from '../SearchBar';
+
 const ProductInfo = () => {
   const [products, setProducts] = useState([]);
-
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
       .then(res => res.json())
       .then(data => setProducts(data));
   }, []);
 
+  const filteredProducts = products.filter(product => {
+    return product.title.toLowerCase().includes(`${SearchBar}`.toLowerCase());
+    });
+
   return (
     <div>
-      {products.map(product => (
+      {filteredProducts.map(product => (
         <div key={product.id}>
           <h2>{product.title}</h2>
           <p>{product.description}</p>

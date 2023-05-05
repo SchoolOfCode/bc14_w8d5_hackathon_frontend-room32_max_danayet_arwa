@@ -2,13 +2,12 @@
 // import './App.css';
 
 import React from "react";
-import ProductInfo from "./components/ProductInfo"
-import SearchBar from "./components/SearchBar";
+import ProductInfo from "./components/ProductInfo";
 
 function App() {
   return (
     <div className="App">
-      <ProductInfo/>
+      <ProductInfo />
     </div>
   );
 }

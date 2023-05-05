@@ -3,11 +3,14 @@
 
 import React from "react";
 import ProductInfo from "./components/ProductInfo"
+import SearchBar from "./components/SearchBar";
 
 function App() {
   return (
     <div className="App">
- <ProductInfo/>
+       <SearchBar/>
+      <ProductInfo/>
+
     </div>
   );
 }

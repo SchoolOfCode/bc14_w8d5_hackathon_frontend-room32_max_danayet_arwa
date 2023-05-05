@@ -19,7 +19,7 @@ return product.title.toLowerCase().includes(searchText.toLowerCase());
 
 return (
 <div>
-<SearchBar setSearchText={setSearchText} />
+<SearchBar setSearchText={setSearchText} searchText={searchText}/>
 {filteredProducts.map(product => (
 <div key={product.id}>
 <h2>{product.title}</h2>

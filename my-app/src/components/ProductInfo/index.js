@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Button from "../AddToCart"
 import React from 'react';
 import SearchBar from '../SearchBar';
-// import './style.css';
+import './style.css';
 
 const ProductInfo = () => {
   const [products, setProducts] = useState([]);

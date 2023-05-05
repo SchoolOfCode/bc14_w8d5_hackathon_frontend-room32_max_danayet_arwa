@@ -1,18 +1,24 @@
 import { useState, useEffect } from 'react';
 
 const ProductInfo = () => {
-  const [product, setProduct] = useState(null);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
       .then(res => res.json())
-      .then(data => setProduct(data)); // for example, using the first product in the array
-      console.log(product);
+      .then(data => setProducts(data));
   }, []);
 
   return (
     <div>
-      {product && <h1>{product.title}</h1>}
+      {products.map(product => (
+        <div key={product.id}>
+          <h2>{product.title}</h2>
+          <p>{product.description}</p>
+          <p>{product.price}</p>
+          <img src={product.image} alt={product.title} />
+        </div>
+      ))}
     </div>
   );
 };

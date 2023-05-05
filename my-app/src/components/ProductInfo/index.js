@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-
+import Button from "../AddToCart"
 const ProductInfo = () => {
   const [products, setProducts] = useState([]);
 
@@ -15,8 +15,9 @@ const ProductInfo = () => {
         <div key={product.id}>
           <h2>{product.title}</h2>
           <p>{product.description}</p>
-          <p>{product.price}</p>
+          <p>£{product.price}</p>
           <img src={product.image} alt={product.title} />
+          <Button title="Add To Cart"/>
         </div>
       ))}
     </div>

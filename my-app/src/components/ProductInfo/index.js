@@ -21,22 +21,24 @@ const ProductInfo = () => {
 
   return (
     <div>
-      <div className="nav-bar">
-        <h1>MAD Clothing</h1>
-        <div>Cart: {cart.length}</div>
-      </div>
-      <SearchBar setSearchText={setSearchText} searchText={searchText}/>
+<div className="nav-bar">
+  <h1>MAD Clothing</h1>
+  <SearchBar setSearchText={setSearchText} searchText={searchText} />
+  <div className="cart-info">Cart: {cart.length}</div>
+</div>
       <div className="product-grid">
-        {filteredProducts.map(product => (
-          <div key={product.id} className="product-item">
-            <h2>{product.title}</h2>
-            <p>{product.description}</p>
-            <p>£{product.price}</p>
-            <img src={product.image} alt={product.title} className="product-image" />
-            <Button title="Add To Cart" product={product} setCart={setCart}/>
-          </div>
-        ))}
+  {filteredProducts.map(product => (
+    <div key={product.id} className="product-item">
+      <h2>{product.title}</h2>
+      <p>{product.description}</p>
+      <p>£{product.price}</p>
+      <div className="product-image-wrapper">
+        <img className="product-image" src={product.image} alt={product.title} />
       </div>
+      <Button className="add-to-cart-button" title="Add To Cart" product={product} setCart={setCart}/>
+    </div>
+  ))}
+</div>
     </div>
   );
 };

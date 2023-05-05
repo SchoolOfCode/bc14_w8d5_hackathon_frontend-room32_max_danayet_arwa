@@ -16,7 +16,7 @@ function Button(props) {
   
     return(
         <div>
-        <button onClick={handleClick}>{props.title}</button>
+        <button className="add-to-cart-button" onClick={handleClick}>{props.title}</button>
         </div>
     )
   }
